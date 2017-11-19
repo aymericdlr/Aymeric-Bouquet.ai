@@ -71,7 +71,7 @@ createBarChart= function (response) {
             legend: { display: false },
             title: {
                 display: true,
-                text: 'Amount of transactions per department (in Dollars)'
+                text: 'Amount in USD by department'
             }
         }
     });
@@ -98,7 +98,7 @@ updateData=function(){
             alert("No data available for the selected month and year");
             return
         }
-        document.getElementById("text_title").innerHTML="Data for "+month+"/"+year; //change the title
+        document.getElementById("text_title").innerHTML="Data for "+month+"/"+year+" in Marin Country"; //change the title
 
         //display the total amount for this month
         let total_amount=document.getElementById("total");
