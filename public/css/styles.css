@@ -1,0 +1,36 @@
+h1 {
+    text-align : center;
+    color:red;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+::placeholder{
+    color:white;
+}
+
+#noData{
+    color:blue;
+    text-align:center;
+}
+
+#bar{
+    height:80vh;
+    position: relative;
+}
+
+#info{
+    display: flex;
+    justify-content: space-between;
+    font-family: Verdana;
+}

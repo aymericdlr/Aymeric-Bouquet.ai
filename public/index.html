@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <title>Bouquet.ai</title>
+</head>
+
+<body>
+<div id="title">
+    <h1 id="text_title">Data for </h1>
+</div>
+
+<div id="info">
+    <div id="date-picker">
+        <select class="button" id="month">
+            <option value="01">January</option>
+            <option value="02">February</option>
+            <option value="03">March</option>
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+        <input class ="button" id="year" type="number" placeholder="Year" />
+        <button id="submit" class="button" onclick="updateData()">Submit</button>
+    </div>
+    <div id="total">
+    </div>
+</div>
+
+
+<div id="content">
+    <div class="bar" id="bar">
+        <canvas id="bar-chart" ></canvas>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script src="javascript/ajax.js"></script>
+<script src="javascript/logic.js"></script>
+</body>
+
+</html>

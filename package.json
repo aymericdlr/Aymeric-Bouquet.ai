@@ -1,0 +1,23 @@
+{
+  "name": "bouquetai-project",
+  "version": "1.0.0",
+  "description": "Exercice for BouquetAI",
+  "engines": {
+    "node": "^6.11.13"
+  },
+  "main": "app.js",
+  "scripts": {
+    "start": " node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aymericdlr/Exercice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.12.1",
+    "path": "^0.12.7"
+  }
+}
