@@ -5,10 +5,10 @@
 //global variable for the chart
 let myChart;
 
-//we load we display the data of the last available month which is June 2017
+//we load we display the datas of the last available month which is June 2017
 document.getElementById("year").value="2017";         
 document.getElementById("month").value="06";         
-document.getElementById("text_title").innerHTML="Data for 06/2017"
+document.getElementById("text_title").innerHTML="Data for 06/2017 in Marin County"
 ajaxGet("https://data.marincounty.org/resource/mw3d-ud6d.json?month_and_year=2017-06-01T00:00:00.000", function (reponse) {
     createBarChart(reponse);
 });
@@ -98,7 +98,7 @@ updateData=function(){
             alert("No data available for the selected month and year");
             return
         }
-        document.getElementById("text_title").innerHTML="Data for "+month+"/"+year+" in Marin Country"; //change the title
+        document.getElementById("text_title").innerHTML="Data for "+month+"/"+year+" in Marin County"; //change the title
 
         //display the total amount for this month
         let total_amount=document.getElementById("total");
