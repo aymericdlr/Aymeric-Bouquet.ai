@@ -1,7 +1,6 @@
 //all the function used by the HTML page except the AJAX request 
 
 
-
 //global variable for the chart
 let myChart;
 
@@ -27,7 +26,7 @@ createBarChart= function (response) {
     }
     //display the total amount for this month
     let total_amount=document.getElementById("total");
-    total_amount.innerHTML="Total: "+total+"$ ";
+    total_amount.innerHTML="Total: "+total.toLocaleString()+"$ ";
 
     //creation of the Bar Chart
     myChart=new Chart(document.getElementById("bar-chart"), {
@@ -45,7 +44,7 @@ createBarChart= function (response) {
         },
         options: {
             animation:0,
-            tooltips: {                     //informations when hover
+            tooltips: {                     //informations when hover a bar
                 enabled: true,
                 displayColors: false,
                 mode: 'label',
@@ -60,7 +59,7 @@ createBarChart= function (response) {
                 xAxes: [{
                     ticks: {
                         callback: function(value) {
-                            return value.substr(0, 10)+"..";//truncate the Xlabels
+                            return value.substr(0, 10)+"..";//truncate the Xlabels if they are too long
                         },
                     }
                 }],
@@ -79,13 +78,13 @@ createBarChart= function (response) {
 
 
 
-
+//function to display the new data when the user select another month or year
 updateData=function(){
     //get month and year and update title of the page
     let month=document.getElementById("month").value;
     let year=document.getElementById("year").value;
 
-    url="https://data.marincounty.org/resource/mw3d-ud6d.json?month_and_year=";
+    let url="https://data.marincounty.org/resource/mw3d-ud6d.json?month_and_year=";
     ajaxGet(url+year+"-"+month+"-01T00:00:00.000", function (response) {
 
         let chart_data=prepareData(response);
@@ -102,7 +101,7 @@ updateData=function(){
 
         //display the total amount for this month
         let total_amount=document.getElementById("total");
-        total_amount.innerHTML="Total: "+total+"$ ";
+        total_amount.innerHTML="Total: "+total.toLocaleString()+"$ ";
 
         //we clear the old datas and we add new ones
         removeData(myChart);
@@ -111,8 +110,7 @@ updateData=function(){
 }
 
 
-
-
+//clear the current data of a chart
 removeData=function(chart) {
     chart.data.labels=[];
     chart.data.datasets[0].data=[];
@@ -122,6 +120,7 @@ removeData=function(chart) {
 }
 
 
+//add data to the chart
 addData=function(chart, label, data) {
     chart.data.labels=label;
     chart.data.datasets[0].data=data;
